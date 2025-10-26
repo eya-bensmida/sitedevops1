@@ -1,1 +1,1 @@
-#mon premier projet git ceci est un test d'inisialisation de depot git.
+#mon premier projet git ceci est un test d'initialisation de dépot git 
