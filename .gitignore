@@ -1,0 +1,22 @@
+# XAMPP specific
+/xampp/
+/htdocs/other-projects/
+# Log files
+*.log
+# Environment files
+.env
+config.php
+# Temporary files
+tmp/
+temp/
+# Database files (if stored in project)
+*.sql
+*.mdb
+# OS files
+.DS_Store
+Thumbs.db
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
