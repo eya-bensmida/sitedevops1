@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Échec de la connexion : " . mysqli_connect_error());
     }
     $email =  $_POST['email'];
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $password =($conn, $_POST['password'];
 
     $query = "select * from comptes where email='$email' and password='$password'";
     $result = mysqli_query($conn, $query);
