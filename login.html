@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Fleuriste</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">🌸 Fleuriste</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="login">
+      <h1>Connexion</h1>
+      <form
+        id="login-form"
+        onsubmit="return verif()"
+        method="post"
+        action="login.php"
+      >
+        <input type="email" id="email" name="email" placeholder="Email" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Mot de passe"
+        />
+        <input type="submit" value="Se connecter" class="inp" />
+      </form>
+
+      <p>
+        Pas encore inscrit ?
+        <a href="inscription.html">Créer un compte</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>2025 Fleuriste.</p>
+    </footer>
+
+    <form
+      id="login-form"
+      onsubmit="return verif()"
+      method="post"
+      action="login.php"
+    >
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Mot de passe"
+      />
+      <input type="submit" value="Se connecter" class="inp" />
+    </form>
+
+    <script>
+      function verif() {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if (email === "") {
+          alert("Veuillez entrer votre email.");
+          return false;
+        }
+        if (password === "") {
+          alert("Veuillez entrer votre mot de passe.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
