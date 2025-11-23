@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passer Commande - Fleuriste</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">🌸 Fleuriste</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="passer-commande-form">
+      <h1>Passer votre commande</h1>
+
+      <!-- Formulaire avec onsubmit -->
+      <form id="commande-form" onsubmit="return verif();">
+        <label for="commande-details">Liste des bouquets :</label>
+        <textarea
+          id="commande-details"
+          name="commande-details"
+          rows="6"
+          placeholder="Ex: Bouquet de Roses - 2&#10;Bouquet de Tulipes - 1"
+        ></textarea>
+
+        <label for="payment">Méthode de paiement :</label>
+        <select id="payment" name="payment" required>
+          <option value="">--Choisir--</option>
+          <option value="Carte bancaire">Carte bancaire</option>
+          <option value="Paiement à la livraison">
+            Paiement à la livraison
+          </option>
+        </select>
+
+        <label for="num-carte">Numéro de carte :</label>
+        <input
+          type="text"
+          id="num-carte"
+          name="num-carte"
+          placeholder="1234 5678 9012 3456"
+        />
+
+        <label for="code-securite">Code de sécurité :</label>
+        <input
+          type="text"
+          id="code-securite"
+          name="code-securite"
+          placeholder="123"
+        />
+
+        <label for="adresse">Adresse :</label>
+        <input
+          type="text"
+          id="adresse"
+          name="adresse"
+          placeholder="Votre adresse"
+        />
+
+        <label for="telephone">Numéro de téléphone :</label>
+        <input
+          type="tel"
+          id="telephone"
+          name="telephone"
+          placeholder="06 12 34 56 78"
+        />
+
+        <input type="submit" value="Confirmer la commande" class="inp" />
+      </form>
+    </section>
+
+    <script>
+      function verif() {
+        const details = document
+          .getElementById("commande-details")
+          .value.trim();
+        const payment = document.getElementById("payment").value;
+        const numCarte = document.getElementById("num-carte").value.trim();
+        const codeSecu = document.getElementById("code-securite").value.trim();
+        const adresse = document.getElementById("adresse").value.trim();
+        const telephone = document.getElementById("telephone").value.trim();
+        if (!details || !payment || !adresse || !telephone) {
+          alert("Veuillez remplir tous les champs obligatoires !");
+          return false;
+        }
+        if (payment === "Carte bancaire" && (!numCarte || !codeSecu)) {
+          alert("Veuillez remplir le numéro de carte et le code de sécurité !");
+          return false;
+        }
+        window.location.href = "checkout.html";
+        return false;
+      }
+    </script>
+  </body>
+</html>
