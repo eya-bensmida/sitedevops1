@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription - Fleuriste</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">🌸 Fleuriste</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="login">
+      <h1>Créer un compte</h1>
+
+      <form method="post" action="inscription.php" onsubmit="return verif();">
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Nom complet"
+        />
+        <input type="email" id="email" name="email" placeholder="Email" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Mot de passe"
+        />
+        <input type="submit" value="S’inscrire" class="inp" />
+      </form>
+
+      <p>
+        Déjà un compte ?
+        <a href="login.html">Se connecter</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>2025 Fleuriste.</p>
+    </footer>
+
+    <script>
+      function verif() {
+        const fullname = document.getElementById("fullname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if (fullname === "") {
+          alert("Veuillez entrer votre nom complet.");
+          return false;
+        }
+        if (email === "") {
+          alert("Veuillez entrer votre email.");
+          return false;
+        }
+        if (password === "") {
+          alert("Veuillez entrer votre mot de passe.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
